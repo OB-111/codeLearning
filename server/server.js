@@ -13,7 +13,7 @@ const server = http.createServer(app);
 // create a new Socket
 const io = new Server(server, {
   cors: {
-    origin: ["http://localhost:3001","http://moveoProject.onrender.com"]
+    origin: ["http://localhost:3001","http://moveoMernProject.onrender.com"]
   },
 });
 
