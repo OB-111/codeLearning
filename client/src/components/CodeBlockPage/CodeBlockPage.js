@@ -9,11 +9,11 @@ import "ace-builds/src-noconflict/ext-language_tools";
 import "./styles.css";
 
 const CodeBlockPage = ({ codeBlock, role }) => {
-  // const [codeBlock, setCodeBlock] = useState(null);
   const [isCodeMatched, setIsCodeMatched] = useState(false); //for emoji
   const [updatedCode, setUpdatedCode] = useState(
     codeBlock ? codeBlock.code : ""
   );
+
   const socket = io.connect("http://localhost:3000");
 
   // for hilight the solution code
@@ -48,7 +48,6 @@ const CodeBlockPage = ({ codeBlock, role }) => {
             className="text-editor"
             placeholder="Placeholder Text"
             mode="javascript"
-            theme="monokai"
             name="blah2"
             value={updatedCode}
             fontSize={14}
@@ -69,7 +68,6 @@ const CodeBlockPage = ({ codeBlock, role }) => {
             className="text-editor"
             placeholder="Placeholder Text"
             mode="javascript"
-            theme="monokai"
             name="blah2"
             value={updatedCode}
             fontSize={14}
