@@ -3,12 +3,12 @@ const app = express();
 const cors = require("cors");
 const db = require("./db/conn");
 const codeRouter = require("./routes/codeBlock.route");
-const http = require("http");
+const https = require("https");
 const { Server } = require("socket.io");
 app.use(cors());
 app.use(express.json());
 app.use("/api", codeRouter);
-const server = http.createServer(app);
+const server = https.createServer(app);
 
 // create a new Socket..
 const io = new Server(server, {
