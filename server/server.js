@@ -10,10 +10,10 @@ app.use(express.json());
 app.use("/api", codeRouter);
 const server = http.createServer(app);
 
-// create a new Socket
+// create a new Socket..
 const io = new Server(server, {
   cors: {
-    origin: ["http://localhost:3001"]
+    origin: ["http://localhost:3001"],
   },
 });
 
