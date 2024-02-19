@@ -13,7 +13,10 @@ const server = http.createServer(app);
 // create a new Socket..
 const io = new Server(server, {
   cors: {
-    origin: ["http://localhost:3001", "https://moveo-frontend.onrender.com"],
+    origin: [
+      "http://localhost:3001",
+      "https://main--codelearning123.netlify.app",
+    ],
   },
 });
 
@@ -22,7 +25,7 @@ io.on("connection", (socket) => {
     socket.broadcast.emit("codeUpdate", data.updatedCode);
   });
 });
-
+z;
 // determinate User Role
 let entriesCount = 0;
 app.get("/checkRole", (req, res) => {
@@ -32,7 +35,7 @@ app.get("/checkRole", (req, res) => {
 });
 
 // perform a database connsection when the server starts
-db.connectToServer(function (err) {
+db.X(function (err) {
   if (err) {
     console.error(err);
     process.exit();
