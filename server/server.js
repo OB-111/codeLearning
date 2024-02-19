@@ -25,7 +25,6 @@ io.on("connection", (socket) => {
     socket.broadcast.emit("codeUpdate", data.updatedCode);
   });
 });
-z;
 // determinate User Role
 let entriesCount = 0;
 app.get("/checkRole", (req, res) => {
