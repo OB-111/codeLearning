@@ -25,6 +25,7 @@ io.on("connection", (socket) => {
     socket.broadcast.emit("codeUpdate", data.updatedCode);
   });
 });
+
 // determinate User Role
 let entriesCount = 0;
 app.get("/checkRole", (req, res) => {
@@ -34,7 +35,7 @@ app.get("/checkRole", (req, res) => {
 });
 
 // perform a database connsection when the server starts
-db.X(function (err) {
+db.connectToServer(function (err) {
   if (err) {
     console.error(err);
     process.exit();
