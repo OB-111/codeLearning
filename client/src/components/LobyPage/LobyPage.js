@@ -4,6 +4,7 @@ import CodeBlockPage from "../CodeBlockPage/CodeBlockPage";
 import { useNavigate } from "react-router-dom";
 import "./styles.css";
 
+const URL = "http://localhost:3000/";
 const LobbyPage = () => {
   const [codeBlocks, setCodeBlocks] = useState([]);
   const [selectedCodeBlock, setSelectedCodeBlock] = useState(null);
@@ -13,7 +14,7 @@ const LobbyPage = () => {
   //fetches all CodeBlock onLoad..
   useEffect(() => {
     const fetchCodeBlocks = async () => {
-      const { data } = await axios.get("http://localhost:3000/api/getAll");
+      const { data } = await axios.get(`${URL}/api/getAll`);
       setCodeBlocks(data);
       if (role === "student") {
         const found = data.find((codeBlock) => codeBlock.isSelected === true);
@@ -26,7 +27,7 @@ const LobbyPage = () => {
   // check for role
   useEffect(() => {
     const checkRole = async () => {
-      const currentRole = await axios.get("http://localhost:3000/checkRole");
+      const currentRole = await axios.get(`${URL}/checkRole`);
       setRole(currentRole.data);
     };
     checkRole();
@@ -41,9 +42,7 @@ const LobbyPage = () => {
   }, [role]);
 
   const setSelctedCodeBlockID = async (codeBlockId) => {
-    const selectedCodeBlockID = await axios.put(
-      `http://localhost:3000/api/${codeBlockId}`
-    );
+    const selectedCodeBlockID = await axios.put(`${URL}/api/${codeBlockId}`);
     const selected = codeBlocks.find(
       (codeBlock) => codeBlock._id === codeBlockId
     );
