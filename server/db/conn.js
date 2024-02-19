@@ -22,6 +22,26 @@ const CODE_BLOCKS_DATA = [
     code: "const materials = ['Hydrogen','Helium','Lithium','Beryllium']; console.log(materials.map(material  material.length));// Expected output: Array [8, 6, 7, 9]",
     sol: "const materials = ['Hydrogen','Helium','Lithium','Beryllium']; console.log(materials.map(material => material.length));// Expected output: Array [8, 6, 7, 9]",
   },
+  {
+    title: "Destructuring",
+    code: "const person = { name: 'John', age: 30 }; console.log(name, age);",
+    sol: "const person = { name: 'John', age: 30 }; console.log(person.name, person.age);",
+  },
+  {
+    title: "Spread Operator",
+    code: "const arr1 = [1, 2, 3]; const arr2 = [4, 5, 6]; console.log(arr1.concat(arr2));",
+    sol: "const arr1 = [1, 2, 3]; const arr2 = [4, 5, 6]; console.log([...arr1, ...arr2]);",
+  },
+  {
+    title: "Template Literals",
+    code: "const name = 'World'; console.log('Hello, ' + name + '!');",
+    sol: "const name = 'World'; console.log(`Hello, ${name}!`);",
+  },
+  {
+    title: "Map Function",
+    code: "const numbers = [1, 2, 3]; const doubled = numbers.map(function (num) { return num * 2; });",
+    sol: "const numbers = [1, 2, 3]; const doubled = numbers.map((num) => num * 2);",
+  },
 ];
 const codeBlocks = CODE_BLOCKS_DATA.filter((object) => object);
 let dbConnection;
