@@ -14,7 +14,7 @@ const CodeBlockPage = ({ codeBlock, role }) => {
     codeBlock ? codeBlock.code : ""
   );
 
-  const socket = io.connect("http://localhost:3000");
+  const socket = io.connect("https://main--codelearning123.netlify.app/");
 
   // for hilight the solution code
   useEffect(() => {

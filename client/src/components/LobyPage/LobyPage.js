@@ -4,7 +4,9 @@ import CodeBlockPage from "../CodeBlockPage/CodeBlockPage";
 import { useNavigate } from "react-router-dom";
 import "./styles.css";
 
-const URL = "http://localhost:3000/";
+// const URL = "http://localhost:3000";
+const URL = "https://main--codelearning123.netlify.app/";
+
 const LobbyPage = () => {
   const [codeBlocks, setCodeBlocks] = useState([]);
   const [selectedCodeBlock, setSelectedCodeBlock] = useState(null);
