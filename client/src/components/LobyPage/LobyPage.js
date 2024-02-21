@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import "./styles.css";
 
 // const URL = "http://localhost:3000";
-const URL = "https://main--codelearning123.netlify.app/";
+const URL = "https://moveo-backend.onrender.com";
 
 const LobbyPage = () => {
   const [codeBlocks, setCodeBlocks] = useState([]);
